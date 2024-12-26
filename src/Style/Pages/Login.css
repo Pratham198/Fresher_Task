@@ -1,0 +1,254 @@
+/* Login.css */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('D:/Task/src/images/bg.jpg') no-repeat center center/cover; /* Add your background image here */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    filter: none; /* Ensure no filter is applied */
+}
+
+.login-form {
+    background: #ffffff; /* Ensure no opacity or blur */
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    animation: scaleUp 0.6s ease forwards;
+    will-change: transform;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Adjust opacity here */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #2d3748;
+    font-size: 28px;
+    margin-bottom: 8px;
+    animation: fadeIn 0.6s ease 0.3s forwards;
+}
+
+.form-header p {
+    color: #718096;
+    font-size: 16px;
+    animation: fadeIn 0.6s ease 0.4s forwards;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease 0.5s forwards;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #718096;
+    font-size: 18px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #6B73FF;
+    box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.1);
+    outline: none;
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 12px;
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 18px;
+}
+
+.password-toggle-icon:hover {
+    color: #6B73FF;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.6s ease 0.6s forwards;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+}
+
+.button-highlight {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: button-shine 2s infinite;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 0.6s ease 0.7s forwards;
+    
+}
+
+.signup-link a {
+    color: #6B73FF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #000DFF;
+}
+
+/* Loader Styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.loader img {
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes button-shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 30px 20px;
+    }
+
+    .form-header h2 {
+        font-size: 24px;
+    }
+
+    .form-group input {
+        padding: 10px 35px;
+        font-size: 14px;
+    }
+
+    .loader img {
+        width: 40px;
+        height: 40px;
+    }
+}

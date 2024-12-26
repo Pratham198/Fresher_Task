@@ -1,0 +1,95 @@
+/* Basic Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4c82af;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.5rem;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.navbar-title {
+  font-weight: bold;
+}
+
+.navbar-icon {
+  margin-right: 4rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.sidebar {
+  position: fixed; /* Full height of the webpage */
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #3a3c3f;
+  color: white;
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  animation: slideIn 0.3s ease-in-out;
+  z-index: 999; /* Ensures it stays above other content */
+}
+
+.close-icon {
+  position: absolute; /* Icon positioning */
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 8rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #4c82af;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+}
+
+.logout-btn:hover {
+  background-color: #5844c7;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+
+  .navbar-icon {
+    margin-right: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .sidebar {
+    width: 200px;
+    padding: 1.5rem;
+  }
+}

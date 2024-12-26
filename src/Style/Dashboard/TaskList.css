@@ -1,0 +1,136 @@
+.task-list-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 2rem; /* Space between form and image */
+}
+
+.task-list {
+  width: 50%; /* Left form width */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Ensure form doesn’t shrink too much */
+}
+
+.task-list h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.task-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.task-list li {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-list li p {
+  word-wrap: break-word;
+}
+
+.task-list button {
+  background-color: #4c82af;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem; /* Space between buttons */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.task-list button:hover {
+  background-color: #2a39c5;
+  transform: scale(1.05);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #4c82af;
+  transition: color 0.3s ease;
+}
+
+.pagination-btn:hover {
+  color: #2a39c5;
+}
+
+.pagination-btn.disabled {
+  cursor: not-allowed;
+  color: #d3d3d3;
+}
+
+.task-list-image {
+  width: 50%; /* Right image width */
+  min-width: 300px; /* Prevent image from shrinking too much */
+  transition: width 0.3s ease; /* Smooth transition on width change */
+}
+
+.task-list-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Maintain image aspect ratio */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-list-container {
+    flex-direction: column-reverse; /* Show image first, then the form */
+    align-items: center;
+    gap: 1rem; /* Adjust space between image and form */
+  }
+
+  .task-list {
+    width: 90%;
+  }
+
+  .task-list-image {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .task-list button {
+    font-size: 1rem;
+    margin-right: 1rem; /* Space between buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .task-list h3 {
+    font-size: 1.5rem;
+  }
+
+  .task-list li {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .task-list button {
+    
+    font-size: 0.9rem;
+    margin-right: 1rem; /* Space between buttons */
+  }
+}

@@ -1,0 +1,148 @@
+.trf-container {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.trf-left-image {
+  width: 40%;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.trf-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Allow child elements to position themselves relative to the form */
+}
+
+.trf-form h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.trf-form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem; /* Adds spacing between the form and the footer */
+
+}
+
+.trf-left,
+.trf-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.trf-left {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.trf-right {
+  flex: 1;
+}
+
+.trf-left label,
+.trf-right label {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.trf-left input,
+.trf-left select,
+.trf-right textarea {
+  width: 70%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.trf-left input:focus,
+.trf-left select:focus,
+.trf-right textarea:focus {
+  border-color: #1c4669;
+  outline: none;
+}
+
+.trf-right textarea {
+  
+  height: calc(100% - 3rem);
+}
+
+.trf-footer {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  position: absolute; /* Positions footer absolutely */
+  bottom: 2rem; /* Pushes footer to the bottom of the form */
+  width: 100%; /* Ensures footer spans the form width */
+}
+
+.trf-form button {
+  background-color: #4c82af;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.trf-form button:hover {
+  background-color: #1c4669;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .trf-container {
+    flex-direction: column;
+  }
+
+  .trf-left-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+
+  .trf-form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .trf-form h3 {
+    font-size: 1.2rem;
+  }
+
+  .trf-form label {
+    font-size: 0.9rem;
+  }
+
+  .trf-form input,
+  .trf-form textarea,
+  .trf-form select {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .trf-form button {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .trf-footer {
+    margin-bottom: -1rem;
+  }
+}

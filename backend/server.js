@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-dotenv.config(); // Load environment variables
+dotenv.config(); 
 const app = express();
 app.use(express.json()); // Parse JSON bodies
 app.use(cors({

@@ -1,8 +1,8 @@
 import React from "react";
 import "../Style/Pages/Home.css";
 import { useNavigate } from 'react-router-dom';
-import logo from "../images/logo.png"; // Adjust the path based on your project structure
-import additionalImage from "../images/image1.svg"; // Add your new image here
+import logo from "../images/logo.png"; 
+import additionalImage from "../images/image1.svg"; 
 import mobileImage1 from "../images/mobile1.svg"; 
 import mobileImage2 from "../images/mobile2.svg";
 import mobileImage3 from "../images/mobile3.svg";

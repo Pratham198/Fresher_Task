@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the User schema
 const userSchema = new mongoose.Schema(
   {
     firstName: {
@@ -26,7 +25,7 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically adds createdAt and updatedAt fields
+    timestamps: true, 
   }
 );
 

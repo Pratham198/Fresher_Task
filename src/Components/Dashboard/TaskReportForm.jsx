@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { toast } from 'react-toastify'; // Import toast
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 import '../../Style/Dashboard/TaskReportForm.css';
 import exampleImage from '../../images/TaskReport.png';
 
 const TaskReportForm = ({ onNewTaskReport }) => {
   const [date, setDate] = useState('');
   const [description, setDescription] = useState('');
-  const [hoursWorked, setHoursWorked] = useState(1); // Default value set to 1
+  const [hoursWorked, setHoursWorked] = useState(1); 
   const [status, setStatus] = useState('Pending');
 
   const token = localStorage.getItem('token');
@@ -35,7 +35,6 @@ const TaskReportForm = ({ onNewTaskReport }) => {
 
       onNewTaskReport(response.data); // Update the task list
 
-      // Show toast message on success
       toast.success('Task Report submitted successfully!');
 
       // Reset form

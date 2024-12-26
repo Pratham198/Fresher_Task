@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import moment from 'moment-timezone'; // Import moment-timezone
-import { FaCircleArrowLeft } from 'react-icons/fa6'; // Import arrow icons
-import { FaArrowCircleRight } from 'react-icons/fa'; // Import arrow icons
-import { toast } from 'react-toastify'; // Import toastify
+import moment from 'moment-timezone'; 
+import { FaCircleArrowLeft } from 'react-icons/fa6'; 
+import { FaArrowCircleRight } from 'react-icons/fa'; 
+import { toast } from 'react-toastify'; 
 import '../../Style/Dashboard/TaskList.css';
-import exampleImage from '../../images/TaskList.png'; // Add your image path here
+import exampleImage from '../../images/TaskList.png'; 
 
 const TaskList = () => {
   const [taskReports, setTaskReports] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Fetch task reports on component mount
+  
   useEffect(() => {
     const fetchTaskReports = async () => {
-      const token = localStorage.getItem('token'); // Get the token from localStorage
+      const token = localStorage.getItem('token'); 
     
       try {
         const response = await axios.get('http://localhost:5000/api/task-reports', {
@@ -38,20 +38,20 @@ const TaskList = () => {
     try {
       await axios.delete(`/api/task-reports/${id}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Include token in headers
+          Authorization: `Bearer ${token}`,
         },
       });
       setTaskReports((prevReports) => prevReports.filter((report) => report._id !== id));
-      toast.success('Task report deleted successfully!'); // Success toast
+      toast.success('Task report deleted successfully!'); 
     } catch (err) {
       console.error('Error deleting task report', err);
-      toast.error('Error deleting task report'); // Error toast
+      toast.error('Error deleting task report'); 
     }
   };
 
   // Handle task update
   const handleUpdate = async (id, updatedReport) => {
-    const token = localStorage.getItem('token'); // Get the token
+    const token = localStorage.getItem('token'); 
 
     // Check if the task is already completed
     const existingReport = taskReports.find(report => report._id === id);
@@ -74,10 +74,10 @@ const TaskList = () => {
           report._id === id ? { ...report, ...response.data } : report
         )
       );
-      toast.success('Task report updated successfully!'); // Success toast
+      toast.success('Task report updated successfully!'); 
     } catch (err) {
       console.error('Error updating task report', err);
-      toast.error('Error updating task report'); // Error toast
+      toast.error('Error updating task report'); 
     }
   };
 
